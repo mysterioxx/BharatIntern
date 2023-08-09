@@ -1,4 +1,3 @@
-package temperatureconverter;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,10 +14,18 @@ public class TemperatureConverterGUI extends JFrame implements ActionListener {
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
+        getContentPane().setBackground(Color.decode("#F5F5F5")); // Set background color
+
+        // Create and set fonts
+        Font labelFont = new Font("Arial", Font.BOLD, 16);
+        Font inputFont = new Font("Arial", Font.PLAIN, 14);
 
         inputField = new JTextField(10);
+        inputField.setFont(inputFont);
         resultLabel = new JLabel("Converted: ");
+        resultLabel.setFont(labelFont);
         convertButton = new JButton("Convert");
+        convertButton.setFont(labelFont);
         convertButton.addActionListener(this);
 
         add(new JLabel("Enter Temperature (Celsius): "));
